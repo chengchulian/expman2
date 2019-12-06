@@ -2,7 +2,7 @@ package com.mzy.expman.controller.impl;
 
 import com.mzy.expman.controller.IBaseController;
 import com.mzy.expman.entity.ResponseResult;
-import com.mzy.expman.service.HeiMaoExpService;
+import com.mzy.expman.service.FamiportExpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,19 +14,20 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- * @ClassName HeiMaoExpController
- * @Description 黑猫快递Controller
+ * @ClassName FamiportExpController
+ * @Description 全家快递Controller
  * @Author 程方园
- * @Date 2019/12/4 10:44
+ * @Date 2019/12/5 15:10
  * @Version 1.0
  */
 @Slf4j
-@RequestMapping("Api/HeiMaoExp")
+@RequestMapping("Api/FamiportExp")
 @RestController
-public class HeiMaoExpController implements IBaseController {
+public class FamiportExpController implements IBaseController {
+
 
     @Autowired
-    private HeiMaoExpService heiMaoExpService;
+    FamiportExpService famiportExpService;
 
     @PostMapping("/uploadExcel")
     @Override
@@ -35,7 +36,7 @@ public class HeiMaoExpController implements IBaseController {
             return ResponseResult.err("上传失败！");
         }
         try {
-            return ResponseResult.ok(heiMaoExpService.getExcelUrlPath(file),"生成成功");
+            return ResponseResult.ok(famiportExpService.getExcelUrlPath(file),"生成成功");
         } catch (IOException e) {
             return ResponseResult.err("生成失败！");
         }

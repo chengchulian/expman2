@@ -46,7 +46,7 @@ abstract class MyBaseService {
     }
 
     public File saveUpFile(MultipartFile file, String fileSavePath) throws IOException {
-        File saveFile = new File(EXCEL_PATH + fileSavePath + simpleDateFormat.format(LocalDateTime.now()) + ".xlsx");
+        File saveFile = new File(EXCEL_PATH + fileSavePath + simpleDateFormat.format(new Date()) + ".xlsx");
         //创建父级文件路径
         saveFile.getParentFile().mkdirs();
         //创建文件

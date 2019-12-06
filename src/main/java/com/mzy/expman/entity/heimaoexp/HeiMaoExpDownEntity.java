@@ -25,6 +25,6 @@ public class HeiMaoExpDownEntity extends BaseRowModel {
     private String date;
     @ExcelProperty(value = "負責營業所",index=3)
     private String place;
-    @ExcelProperty(value = "备注")
-    private String remake;
+    @ExcelProperty(value = "备注",index = 4)
+    private String remark;
 }

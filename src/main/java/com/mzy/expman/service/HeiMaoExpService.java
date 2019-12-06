@@ -39,9 +39,11 @@ public class HeiMaoExpService extends MyBaseService {
 
     @Override
     public String getExcelUrlPath(MultipartFile file) throws IOException {
-        //保存上传文件
+
         String upFileSavePath = "/HeiMaoExp/upload/hm_exp_up";
         String downFileSavePath = "/HeiMaoExp/download/hm_exp_down";
+
+        //保存上传文件
         File saveUpFile = saveUpFile(file, upFileSavePath);
 
         //从文件中读取上传列表
@@ -60,7 +62,7 @@ public class HeiMaoExpService extends MyBaseService {
             completableFutureList.add(heiMaoExpReptile.getDownEntityList(expRequestEntity));
         }
         //等待多线程执行完成
-        CompletableFuture.allOf(completableFutureList.toArray(new CompletableFuture[0])).join();
+        CompletableFuture.allOf(completableFutureList.toArray(CompletableFuture[]::new)).join();
 
         //添加到返回列表
         List<HeiMaoExpDownEntity> heiMaoExpDownEntityList= new ArrayList<>();

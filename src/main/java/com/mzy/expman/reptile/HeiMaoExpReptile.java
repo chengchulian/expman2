@@ -2,10 +2,8 @@ package com.mzy.expman.reptile;
 
 import com.mzy.expman.entity.ExpRequestEntity;
 import com.mzy.expman.entity.heimaoexp.HeiMaoExpDownEntity;
-import com.mzy.expman.utils.MyRequestBuilder;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -25,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
  * @Date 2019/12/4 14:12
  * @Version 1.0
  */
-@Async
+@Async("heiMaoExpTheadPool")
 @Slf4j
 @Component
 public class HeiMaoExpReptile extends MyBaseReptile<HeiMaoExpDownEntity> {
@@ -36,6 +34,7 @@ public class HeiMaoExpReptile extends MyBaseReptile<HeiMaoExpDownEntity> {
 
         List<HeiMaoExpDownEntity> heiMaoExpDownEntityList = new ArrayList<>();
         try {
+//            log.info("{}的cookie：{}",expRequestEntity.getExpIdList().get(0),expRequestEntity.getRequest().header("cookie"));
             String html = Objects.requireNonNull(okHttpClient.newCall(expRequestEntity.getRequest()).execute().body()).string();
             Document document = Jsoup.parse(html);
 
@@ -50,19 +49,19 @@ public class HeiMaoExpReptile extends MyBaseReptile<HeiMaoExpDownEntity> {
                     heiMaoExpDownEntityList.add(HeiMaoExpDownEntity.builder()
                             .expId(elements.get(0).text())
                             .state(elements.size()>=2? elements.get(1).text():"")
-                            .expId(elements.size()>=3? elements.get(2).text():"")
-                            .expId(elements.size()>=4? elements.get(3).text():"")
+                            .date(elements.size()>=3? elements.get(2).text():"")
+                            .place(elements.size()>=4? elements.get(3).text():"")
                             .build());
                 }
             }else {
                 for (String expId : expRequestEntity.getExpIdList()) {
-                    heiMaoExpDownEntityList.add(HeiMaoExpDownEntity.builder().expId(expId).remake("生成失败").build());
+                    heiMaoExpDownEntityList.add(HeiMaoExpDownEntity.builder().expId(expId).remark("生成失败").build());
                 }
             }
         } catch (IOException e) {
             log.warn("网络异常：{}",e.getMessage());
             for (String expId : expRequestEntity.getExpIdList()) {
-                heiMaoExpDownEntityList.add(HeiMaoExpDownEntity.builder().expId(expId).remake("生成失败").build());
+                heiMaoExpDownEntityList.add(HeiMaoExpDownEntity.builder().expId(expId).remark("生成失败").build());
             }
         }
         return CompletableFuture.completedFuture(heiMaoExpDownEntityList);

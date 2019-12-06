@@ -1,9 +1,15 @@
 package com.mzy.expman;
 
 import com.mzy.expman.entity.ExpRequestEntity;
+import com.mzy.expman.entity.famiportexp.FamiportExpDownEntity;
+import com.mzy.expman.entity.famiportexp.FamiportExpUpEntity;
 import com.mzy.expman.entity.heimaoexp.HeiMaoExpDownEntity;
 import com.mzy.expman.entity.heimaoexp.HeiMaoExpUpEntity;
+import com.mzy.expman.entity.heimaozipcode.HeiMaoZipCodeDownEntity;
+import com.mzy.expman.entity.heimaozipcode.HeiMaoZipCodeUpEntity;
+import com.mzy.expman.reptile.FamiportExpReptile;
 import com.mzy.expman.reptile.HeiMaoExpReptile;
+import com.mzy.expman.reptile.HeiMaoZipCodeReptile;
 import com.mzy.expman.utils.MyRequestBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,26 +47,26 @@ class ExpmanApplicationTests {
 
     @Autowired
     HeiMaoExpReptile heiMaoExpReptile;
-    @Test
+//    @Test
     void heiMaoExpReptileTest(){
 
         List<HeiMaoExpUpEntity> heiMaoExpUpEntityList = new ArrayList<>();
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
-//        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
+        heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
         heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
         heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
         heiMaoExpUpEntityList.add(new HeiMaoExpUpEntity("620264294022"));
@@ -87,4 +93,81 @@ class ExpmanApplicationTests {
     }
 
 
+    @Autowired
+    FamiportExpReptile famiportExpReptile;
+//    @Test
+    void famiportExpReptileTest(){
+        List<FamiportExpUpEntity> famiportExpUpEntityList = new ArrayList<>();
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+        famiportExpUpEntityList.add(new FamiportExpUpEntity("191027211215"));
+
+        List<ExpRequestEntity> expRequestEntityList = MyRequestBuilder.getFamiportExpRequest(famiportExpUpEntityList);
+        //放置多线程执行集合中
+        List<CompletableFuture<FamiportExpDownEntity>> completableFutureList= new ArrayList<>();
+        for (ExpRequestEntity expRequestEntity : expRequestEntityList) {
+            completableFutureList.add(famiportExpReptile.getDownEntity(expRequestEntity));
+        }
+
+        //等待多线程执行完成
+        CompletableFuture.allOf(completableFutureList.toArray(CompletableFuture[]::new)).join();
+
+        for (CompletableFuture<FamiportExpDownEntity> completableFuture : completableFutureList) {
+            System.out.println(completableFuture.join());
+        }
+
+
+    }
+
+    @Autowired
+    HeiMaoZipCodeReptile heiMaoZipCodeReptile;
+    @Test
+    void HeiMaoZipCodeReptileTest(){
+        List<HeiMaoZipCodeUpEntity> heiMaoZipCodeUpEntityList = new ArrayList<>();
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        heiMaoZipCodeUpEntityList.add(new HeiMaoZipCodeUpEntity("高雄市","仁武區","臺灣高雄市仁武區名光街60號5樓"));
+        //获取ExpRequestEntity
+        List<ExpRequestEntity> expRequestEntityList = MyRequestBuilder.getHeiMaoZipCodeRequest(heiMaoZipCodeUpEntityList);
+
+        //放置多线程执行集合中
+        List<CompletableFuture<HeiMaoZipCodeDownEntity>> completableFutureList = new ArrayList<>();
+        for (ExpRequestEntity expRequestEntity : expRequestEntityList) {
+            completableFutureList.add(heiMaoZipCodeReptile.getDownEntity(expRequestEntity));
+        }
+
+        for (CompletableFuture<HeiMaoZipCodeDownEntity> completableFuture : completableFutureList) {
+            System.out.println(completableFuture.join());
+        }
+
+    }
 }

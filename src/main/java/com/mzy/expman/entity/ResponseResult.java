@@ -22,6 +22,9 @@ public class ResponseResult {
     private String msg;
     private String data;
 
+    public static ResponseResult ok(String data,String msg){
+        return new ResponseResult(200,msg,data);
+    }
     public static ResponseResult ok(String data){
         return new ResponseResult(200,"",data);
     }
