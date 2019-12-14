@@ -13,5 +13,4 @@ import org.springframework.web.multipart.MultipartFile;
 public interface IBaseController {
 
     ResponseResult post(MultipartFile file);
-
 }

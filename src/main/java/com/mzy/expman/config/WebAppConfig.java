@@ -45,6 +45,25 @@ public class WebAppConfig {
 
         return executor;
     }
+    @Bean(name = "QiElevenExpTheadPool")
+    public ThreadPoolTaskExecutor QiElevenExpTaskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        //核心线程数量
+        executor.setCorePoolSize(1);
+        //最大线程数量
+        executor.setMaxPoolSize(1);
+        //等待队列数量
+        executor.setQueueCapacity(1000);
+        //线程活跃时间
+        executor.setKeepAliveSeconds(20);
+        //线程名称前缀
+        executor.setThreadNamePrefix("QiElevenExpPool");
+        //拒绝行为策略
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        executor.initialize();
+
+        return executor;
+    }
 
     @Bean(name = "HeiMaoZipCodeTheadPool")
     public ThreadPoolTaskExecutor HeiMaoZipCodeTaskExecutor() {

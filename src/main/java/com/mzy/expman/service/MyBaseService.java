@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.script.ScriptException;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -55,5 +56,5 @@ abstract class MyBaseService {
         return saveFile;
     }
 
-    abstract public String getExcelUrlPath(MultipartFile file) throws IOException;
+    abstract public String getExcelUrlPath(MultipartFile file) throws IOException, ScriptException, NoSuchMethodException;
 }

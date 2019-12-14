@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>黑猫区码处理</title>
+    <title>711订单处理</title>
     <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
     <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="webjars/vue/2.6.10/vue.min.js"></script>
@@ -11,7 +11,6 @@
 
 
     <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
-
 </head>
 <body>
 <div id="app">
@@ -19,10 +18,11 @@
 
 
         <div class="jumbotron">
-            <h1>黑猫区码</h1>
+            <h1>711 订单</h1>
             <h3>可能需要一些时间，请耐心等待……</h3>
             <p style="color: red"> 请务必按照格式要求上传 </p>
         </div>
+
         <form id="updateForm">
             <label class="control-label" for="fileupload">上传文件</label>
             <input class="file-loading" type="file" name="file" id="fileupload" accept=".xlsx"/>
@@ -30,7 +30,6 @@
 
         <br>
         <button class="btn btn-default btn-lg" id="fileupload_submit" onclick="update()">上传</button>
-        <!--        <input type="button" class="btn btn-default btn-lg"  value="测试" @click="thena()">-->
         <br>
     </div>
 
@@ -42,7 +41,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="btnOpen()">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="btnOpen()">
+                        &times;
+                    </button>
                     <!--标题文本-->
                     <h4 class="modal-title" id="myModalLabel">生成结果</h4>
                 </div>
@@ -52,13 +53,15 @@
                     <!--关闭按钮-->
                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="btnOpen()">关闭</button>
                     <!--下载按钮-->
-                    <button id="downloadBtn" type="button" class="btn btn-primary" data-dismiss="modal" onclick="download()">下载</button>
+                    <button id="downloadBtn" type="button" class="btn btn-primary" data-dismiss="modal"
+                            onclick="download()">下载
+                    </button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
 </div>
-</body>
+
 
 
 <script src="js/loading.js"></script>
@@ -69,7 +72,7 @@
         var formData = new FormData(document.querySelector("#updateForm"));
         $("#fileupload_submit").attr("disabled",true);
         $.ajax({
-            url:'/Api/HeiMaoZipCode/uploadExcel',
+            url:'/Api/QiElevenExp/uploadExcel',
             type: "POST",
             data: formData,
             processData: false,  // 不处理数据
@@ -109,30 +112,9 @@
     }
 
 
-    // var app = new Vue({
-    //     el:'#app',
-    //     data:{
-    //     },
-    //     methods:{
-    //         update: function(){
-    //
-    //             var formData = new FormData(document.querySelector("#updateForm"));
-    //             console.log(formData);
-    //             axios({
-    //                 method:'post',
-    //                 url:'/heimao/uploadExcel',
-    //                 data:formData,
-    //             }).then(function (responseEntity) {
-    //                 console.log(responseEntity);
-    //                 $("#downloadModal").modal("show");
-    //             })
-    //         },
-    //         thena :function () {
-    //
-    //         }
-    //     }
-    // })
-
 </script>
 
+
+
+</body>
 </html>

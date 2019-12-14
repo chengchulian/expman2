@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mzy</groupId>
     <artifactId>expman</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0build3</version>
     <name>expman</name>
     <description>Demo project for Spring Boot</description>
 
@@ -25,9 +25,9 @@
         </dependency>
 
         <dependency>
-            <groupId> org.springframework.boot </groupId>
-            <artifactId> spring-boot-configuration-processor </artifactId>
-            <optional> true </optional>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -54,8 +54,6 @@
             <artifactId>jsoup</artifactId>
             <version>1.12.1</version>
         </dependency>
-
-
 
 
         <dependency>

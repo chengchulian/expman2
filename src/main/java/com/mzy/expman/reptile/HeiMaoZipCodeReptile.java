@@ -11,7 +11,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.net.http.HttpClient;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 public class HeiMaoZipCodeReptile extends MyBaseReptile<HeiMaoZipCodeDownEntity> {
     @Override
     public CompletableFuture<HeiMaoZipCodeDownEntity> getDownEntity(ExpRequestEntity expRequestEntity) {
-        log.info("{} 开始时间：{}", expRequestEntity.getExpId(), new Date());
+//        log.info("{} 开始时间：{}", expRequestEntity.getExpId(), new Date());
         OkHttpClient okHttpClient = new OkHttpClient();
 
         HeiMaoZipCodeDownEntity heiMaoZipCodeDownEntity= new HeiMaoZipCodeDownEntity();

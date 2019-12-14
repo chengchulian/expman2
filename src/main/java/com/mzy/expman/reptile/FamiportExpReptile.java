@@ -29,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 public class FamiportExpReptile extends MyBaseReptile<FamiportExpDownEntity> {
     @Override
     public CompletableFuture<FamiportExpDownEntity> getDownEntity(ExpRequestEntity expRequestEntity) {
-        log.info("{} 开始时间：{}",expRequestEntity.getExpId(),new Date());
+//        log.info("{} 开始时间：{}",expRequestEntity.getExpId(),new Date());
         OkHttpClient okHttpClient = new OkHttpClient();
 
         FamiportExpDownEntity famiportExpDownEntity = new FamiportExpDownEntity();
@@ -50,7 +50,7 @@ public class FamiportExpReptile extends MyBaseReptile<FamiportExpDownEntity> {
                 FamiportResponseExpInfo famiportResponseExpInfo = list.get(0);
 
                 famiportExpDownEntity.setOrderNum(famiportResponseExpInfo.getEc_order_no());
-                famiportExpDownEntity.setDate(famiportResponseExpInfo.getOrder_date_r());
+                famiportExpDownEntity.setDate(famiportResponseExpInfo.getOrder_date_rtn());
                 famiportExpDownEntity.setState(famiportResponseExpInfo.getStatus_d());
             }
 
@@ -60,7 +60,7 @@ public class FamiportExpReptile extends MyBaseReptile<FamiportExpDownEntity> {
 //            e.printStackTrace();
         }
 
-        log.info("{} 结束时间：{}",expRequestEntity.getExpId(),new Date());
+//        log.info("{} 结束时间：{}",expRequestEntity.getExpId(),new Date());
         return CompletableFuture.completedFuture(famiportExpDownEntity);
     }
 

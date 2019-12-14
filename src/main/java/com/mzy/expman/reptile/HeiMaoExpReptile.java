@@ -40,7 +40,7 @@ public class HeiMaoExpReptile extends MyBaseReptile<HeiMaoExpDownEntity> {
 
             Elements tables = document.getElementsByClass("tablelist");
 
-            if (tables!=null){
+            if (tables.size()!=0){
                 Elements trs = tables.get(0).getElementsByTag("tr");
                 for (int i = 1;i<trs.size();i++){
                     Elements elements = trs.get(i).select("td span");
